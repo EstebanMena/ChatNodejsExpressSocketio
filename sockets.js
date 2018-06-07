@@ -7,8 +7,8 @@ module.exports = (server) => { // Para exportar el módulo y que acepte el servi
     sockets.on("connection", (socket) => { // socket (sin 's') (parámetro) es la connection
         console.log("New connected user"); // Cada vez que alguien se conecta, avisa por la consola
 
-        socket.on("clientMessage", (message) => { // Cuando ocurra el evento clientMessage, que es un emit (evento enviado) desde el cliente (puedes llamar un evento como quieras, sólo es un evento). El parámetro es lo enviado, en este caso el mensaje
-            sockets.emit("serverMessage", message); // Devolvemos otro evento con el mensaje, pero esta vez a todos los clientes (socket con 's')
+        socket.on("clientMessage", (message, clientName) => { // Cuando ocurra el evento clientMessage, que es un emit (evento enviado) desde el cliente (puedes llamar un evento como quieras, sólo es un evento). El 1er parámetro es lo enviado, en este caso el mensaje, el 2do es el nombre de quien lo mando
+            sockets.emit("serverMessage", message, clientName); // Devolvemos otro evento con el mensaje y el nombre, pero esta vez a todos los clientes (socket con 's')
         });
     });
 }
