@@ -1,7 +1,7 @@
 {
-  "name": "chat_nodejs_mongodb",
+  "name": "chat_nodejs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Chat con NodeJs, ExpressJs, SocketIo y MongoDB. MaterializeCSS y JQuery en front-end",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
